@@ -1,0 +1,77 @@
+dataset:
+  rafdb:
+    resize: 224
+model:
+  resnet:
+    arch: resnet18
+    img_channels: 3
+    num_classes: 7
+    pretrained: false
+  vit:
+    channels: 3
+    depth: null
+    dim: null
+    dim_head: 64
+    dropout: 0.0
+    emb_dropout: 0.0
+    heads: null
+    image_size: null
+    mlp_dim: null
+    num_classes: null
+    patch_size: null
+    pool: cls
+optim:
+  adam_ca:
+    T_max: null
+    amsgrad: false
+    betas: &id001 !!python/tuple
+    - 0.9
+    - 0.999
+    eps: 1.0e-08
+    lr: 0.0001
+    max_norm: null
+    no_weight_decay_on_bn: false
+    weight_decay: 0
+  adam_multistep:
+    amsgrad: false
+    betas: *id001
+    eps: 1.0e-08
+    gama: 0.1
+    lr: 0.01
+    max_norm: null
+    milestones:
+    - 5
+    - 10
+    no_weight_decay_on_bn: false
+    weight_decay: 0
+  adam_step:
+    gamma: 0.5
+    lr: 0.005
+    max_norm: null
+    no_weight_decay_on_bn: false
+    step_size: 30
+  sgd_ca:
+    T_max: null
+    lr: 0.01
+    max_norm: null
+    momentum: 0
+    no_weight_decay_on_bn: false
+    weight_decay: 0
+  sgd_multistep:
+    gama: 0.1
+    lr: 0.01
+    max_norm: 10.0
+    milestones:
+    - 60
+    - 100
+    momentum: 0
+    no_weight_decay_on_bn: true
+    weight_decay: 0
+  sgd_step:
+    gamma: 0.5
+    lr: 0.005
+    max_norm: null
+    momentum: 0.9
+    no_weight_decay_on_bn: false
+    step_size: 30
+    weight_decay: 0.0005
